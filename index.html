@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PairDrop Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>PairDrop</h1>
+        <p class="tagline">Transfer Files Cross-Platform. No Setup, No Signup.</p>
+        <p class="sub-tagline">The easiest way to transfer files across devices</p>
+    </div>
+
+    <div class="main-container">
+        <!-- Discovery Status Box -->
+        <div class="status-box">
+            <p>Open PairDrop on other devices to send files</p>
+            <p class="hint">Pair devices or enter a public room to be discoverable on other networks</p>
+            <div class="identity">
+                <span id="identityText">You are known as: <b>RandomUser_123</b></span>
+            </div>
+            <div class="actions">
+                <button id="pairingBtn">Pair Devices Permanently</button>
+                <button id="roomBtn">Temporary Public Room</button>
+            </div>
+        </div>
+
+        <!-- Simulated Peer Grid -->
+        <div class="peers-grid" id="peersGrid">
+            <!-- Example Device Card -->
+            <div class="peer-card">
+                <div class="device-icon">💻</div>
+                <h3>My Other Device</h3>
+                <p>Click to send files or messages</p>
+                <button class="send-file-btn">Share File</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pairing Modal -->
+    <div id="pairingModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Pair Devices Permanently</h2>
+            <p>Input this key on another device or scan the QR-code.</p>
+            <div class="code-box">000 000</div>
+            <p>OR</p>
+            <input type="text" placeholder="Enter key from another device here.">
+            <div class="modal-actions">
+                <button id="pairSubmitBtn">Pair</button>
+                <button class="close-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Room Modal -->
+    <div id="roomModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Temporary Public Room</h2>
+            <p>Input this room ID on another device or scan the QR-code.</p>
+            <div class="code-box">IAIAI</div>
+            <p>OR</p>
+            <input type="text" placeholder="Enter room ID from another device to join room.">
+            <div class="modal-actions">
+                <button id="joinRoomBtn">Join</button>
+                <button id="leaveRoomBtn" class="hidden">Leave</button>
+                <button class="close-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
